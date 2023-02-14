@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 70px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #32A1E0;
+  position: relative;
+  color: black;
+
 }
 
-.App-link {
-  color: #61dafb;
+.nav-logo {
+  margin-left: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-logo img {
+  width: 65px;
+}
+
+.nav-items{
+  background-color: #D9D9D9;
+}
+.nav-items a {
+  font-size: 18px;
+  text-decoration: none;
+  margin: 15px;
+  position: relative;
+
+
+ 
+}
+
+.nav-items a:hover {
+  width: 100%;
+}
+
+.nav-items a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: all 0.45s;
+}
+
+.nav-items a:hover::before {
+  width: 100%;
+}
+
+.hamburger-menu {
+  display: none;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.open-icon {
+  display: block;
+  height: 35px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .nav-items {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    background:#32A1E0;;
+    left: 0;
+    width: 100%;
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-items a:hover::before {
+    width: 10%;
+  }
+  .hamburger-menu {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color:black;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+
+  .open-icon {
+    display: block;
+  }
+}
+
+@media (min-width: 700px) {
+  .hidden {
+    display: block !important;
+  }
+}
+
+.about_text {
+  padding-top: -50px;
+  display: flex;
+  margin: 4rem;
+  justify-content: space-between;
+}
+.about_text img {
+  height: 400px;
+  width: 500px;
+}
+.about_text p {
+  font-size: 90px;
+  box-sizing: border-box;
+  padding: auto;
+}
+@media screen and (max-width: 760px) {
+  .about_text {
+    padding-top: 60px;
+    display: block;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .about_text p {
+    margin-top: -30px;
+    font-size: 60px;
+    align-items: center;
+    text-align: center;
+  }
+  .about_text img {
+    width: 100%;
   }
 }
